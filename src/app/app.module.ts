@@ -43,7 +43,7 @@ import { environment } from "../environments/environment";
 import { Level5Component } from './demo/levels/level5/level5.component';
 import {DynamicMenuService} from "./demo/dynamic-menu/dynamic-menu.service";
 import { AdminComponent } from './core/admin/admin.component';
-import { LoginComponent } from './demo/custom-pages/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './demo/custom-pages/register/register.component';
 import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
 import { QuillModule } from 'ngx-quill';
@@ -68,6 +68,9 @@ import { CalendarComponent } from './demo/apps/calendar/calendar.component';
 import { CalendarEditComponent } from './demo/apps/calendar/calendar-edit/calendar-edit.component';
 import { ChatComponent } from './demo/apps/chat/chat.component';
 import {CommonModule} from "@angular/common";
+import {AuthenticationService} from "./services/authentication.service";
+import {UserService} from "./services/user.service";
+import {AlertService} from "./services/alert.service";
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -158,7 +161,10 @@ const sortablejsConfig: SortablejsOptions = {
     BreadcrumbService,
     DynamicMenuService,
     D3ChartService,
-    MailService
+    MailService,
+    AuthenticationService,
+    UserService,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

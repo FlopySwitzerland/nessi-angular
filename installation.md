@@ -24,7 +24,13 @@ Installing Angular-CLI is as simple as running this simple command :
 npm install -g @angular/cli@latest
 ```
 
-and the package manager `npm` will do the rest.
+---
+
+## Installing required packages
+Install all required npm packages by running this command from the command line in the project root folder (where the package.json is located).
+```
+npm install 
+```
 
 ---
 

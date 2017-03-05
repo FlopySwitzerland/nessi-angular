@@ -19,7 +19,7 @@ import {Level5Component} from "./demo/levels/level5/level5.component";
 import {GoogleMapsComponent} from "./demo/maps/google-maps/google-maps.component";
 import {SimpleTableComponent} from "./demo/tables/simple-table/simple-table.component";
 import {FixedHeaderTableComponent} from "./demo/tables/fixed-header-table/fixed-header-table.component";
-import {LoginComponent} from "./demo/custom-pages/login/login.component";
+import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./demo/custom-pages/register/register.component";
 import {ForgotPasswordComponent} from "./demo/custom-pages/forgot-password/forgot-password.component";
 import {EditorComponent} from "./demo/editor/editor.component";
