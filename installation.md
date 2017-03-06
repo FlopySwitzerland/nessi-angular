@@ -26,7 +26,7 @@ npm install -g @angular/cli@latest
 
 ---
 
-## Installing required packages
+## Installing Dependencies
 Install all required npm packages by running this command from the command line in the project root folder (where the package.json is located).
 ```
 npm install 
