@@ -11,7 +11,7 @@ import { SidenavItemComponent } from './core/sidenav-item/sidenav-item.component
 import { SidenavService } from "./core/sidenav/sidenav.service";
 import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from "angular2-perfect-scrollbar";
 import { IconSidenavDirective } from './core/sidenav/icon-sidenav.directive';
-import { RoutingModule } from "./app-routing.module";
+import { Routing } from './app.routing';
 import { DashboardV1Component } from './demo/custom-pages/dashboard-v1/dashboard-v1.component';
 import { ButtonsComponent } from './demo/components/buttons/buttons.component';
 import { HighlightModule } from "./core/highlightjs/highlight.module";
@@ -41,10 +41,10 @@ import { TooltipComponent } from './demo/components/tooltip/tooltip.component';
 import { DynamicMenuComponent } from './demo/dynamic-menu/dynamic-menu.component';
 import { environment } from "../environments/environment";
 import { Level5Component } from './demo/levels/level5/level5.component';
-import {DynamicMenuService} from "./demo/dynamic-menu/dynamic-menu.service";
+import { DynamicMenuService} from "./demo/dynamic-menu/dynamic-menu.service";
 import { AdminComponent } from './core/admin/admin.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './demo/custom-pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './demo/custom-pages/forgot-password/forgot-password.component';
 import { QuillModule } from 'ngx-quill';
 import { EditorComponent } from './demo/editor/editor.component';
@@ -58,19 +58,21 @@ import { GoogleMapsWidgetComponent } from './core/widgets/google-maps-widget/goo
 import { ActivityComponent } from './core/widgets/activity/activity.component';
 import { TrafficSourcesComponent } from './core/widgets/traffic-sources/traffic-sources.component';
 import { LoadingOverlayComponent } from './core/loading-overlay/loading-overlay.component';
-import {SortablejsModule, SortablejsOptions} from "angular-sortablejs";
+import { SortablejsModule, SortablejsOptions} from "angular-sortablejs";
 import { DragAndDropComponent } from './demo/drag-and-drop/drag-and-drop.component';
 import { InboxComponent } from './demo/apps/inbox/inbox.component';
 import { MailService } from "./demo/apps/inbox/mail.service";
 import { InboxComposeComponent } from './demo/apps/inbox/inbox-compose/inbox-compose.component';
-import {CalendarModule} from "angular-calendar";
+import { CalendarModule} from "angular-calendar";
 import { CalendarComponent } from './demo/apps/calendar/calendar.component';
 import { CalendarEditComponent } from './demo/apps/calendar/calendar-edit/calendar-edit.component';
 import { ChatComponent } from './demo/apps/chat/chat.component';
-import {CommonModule} from "@angular/common";
-import {AuthenticationService} from "./services/authentication.service";
-import {UserService} from "./services/user.service";
-import {AlertService} from "./services/alert.service";
+import { CommonModule} from "@angular/common";
+import { AuthenticationService } from "./services/authentication.service";
+import { UserService } from "./services/user.service";
+import { AlertService } from "./services/alert.service";
+import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -131,7 +133,9 @@ const sortablejsConfig: SortablejsOptions = {
     InboxComposeComponent,
     CalendarComponent,
     CalendarEditComponent,
-    ChatComponent
+    ChatComponent,
+    HomeComponent,
+    RegisterComponent
   ],
   entryComponents: [
     DemoDialog,
@@ -143,7 +147,7 @@ const sortablejsConfig: SortablejsOptions = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RoutingModule,
+    Routing,
     MaterialModule.forRoot(),
     FlexLayoutModule,
     PerfectScrollbarModule.forRoot(perfectScrollbarConfig),
@@ -164,7 +168,8 @@ const sortablejsConfig: SortablejsOptions = {
     MailService,
     AuthenticationService,
     UserService,
-    AlertService
+    AlertService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

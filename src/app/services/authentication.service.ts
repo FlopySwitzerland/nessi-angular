@@ -14,12 +14,29 @@ export class AuthenticationService {
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
-        if (user && user.token) {
+        if (user && user.data.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
       });
   }
+
+  register(firstname: string, lastname: string, email: string, password: string) {
+    // TODO: Implement Check Pswd
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let options = new RequestOptions({ headers: headers, method: 'post' });
+    return this.http.post('http://localhost/nessi-api/users/register.json', JSON.stringify({ firstname: firstname, lastname: lastname,
+      email: email, password: password }), options)
+      .map((response: Response) => {
+        // login successful if there's a jwt token in the response
+        let user = response.json();
+        if (user && user.data.token) {
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('currentUser', JSON.stringify(user));
+        }
+      });
+  }
+
 
   logout() {
     // remove user from local storage to log user out

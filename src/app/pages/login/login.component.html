@@ -6,10 +6,10 @@
     <form #form="ngForm" (ngSubmit)="login()">
       <div class="login-content" fxLayout="column" fxLayoutAlign="start stretch">
         <md-input-container>
-          <input md-input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+          <input md-input type="text" placeholder="E-Mail" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
         </md-input-container>
         <md-input-container>
-          <input md-input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <input md-input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
         </md-input-container>
         <div class="extra-options" fxLayout="row" fxLayoutAlign="space-between center">
           <md-checkbox class="remember-me">Remember Me</md-checkbox>

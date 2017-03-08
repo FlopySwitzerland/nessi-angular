@@ -1,4 +1,4 @@
-@import "../../styles/_var";
+@import "../../../styles/_var";
 
 :host {
   display: block;
@@ -8,16 +8,16 @@
   width: 100%;
 }
 
-.login {
+.register {
   background: white;
   width: 380px;
 
-  .login-header {
+  .register-header {
     background: $background-color__sidenav-list;
     padding: 24px;
   }
 
-  .login-content {
+  .register-content {
     padding: 24px 42px 42px;
 
     md-input-container {
@@ -49,6 +49,6 @@
     }
   }
 }
-.login-logo{
+.register-logo{
   width: 60px;
 }
