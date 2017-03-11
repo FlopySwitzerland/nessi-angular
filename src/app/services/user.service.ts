@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import {User} from "../models/user";
+import {User} from '../models/user';
+import {AppSettings} from '../app.settings';
 
 @Injectable()
 export class UserService {
@@ -12,6 +13,10 @@ export class UserService {
 
   getById(id: number) {
     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+  }
+
+  getByToken(token: any) {
+    return this.http.post(AppSettings.API_ENDPOINT + '/users/getUserData/', token, this.jwt()).map((response: Response) => response.json());
   }
 
   create(user: User) {

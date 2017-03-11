@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {AuthenticationService} from '../../services/authentication.service';
 import {AlertService} from '../../services/alert.service';
 import {fadeInAnimation} from '../../route.animation';
+import {MdSnackBar} from "@angular/material";
 
 
 @Component({
@@ -19,12 +20,13 @@ export class LoginComponent implements OnInit {
   model: any = {};
   loading = false;
   returnUrl: string;
+  isLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService) { }
+    private snackBar: MdSnackBar) { }
 
   ngOnInit() {
     // reset login status
@@ -35,15 +37,20 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loading = true;
+    this.isLoading = true;
+
     this.authenticationService.login(this.model.email, this.model.password)
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.alertService.error(error);
-          this.loading = false;
+          console.log(error);
+          this.snackBar.open(error.message, '', {
+            duration: 6000
+          });
+          this.isLoading = false;
         });
   }
+
 }

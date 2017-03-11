@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Headers, Response, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {AppSettings} from "../app.settings";
 
 @Injectable()
 export class AuthenticationService {
@@ -10,7 +11,7 @@ export class AuthenticationService {
   login(email: string, password: string) {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let options = new RequestOptions({ headers: headers, method: 'post' });
-    return this.http.post('http://localhost/nessi-api/users/token', JSON.stringify({ email: email, password: password }), options)
+    return this.http.post(AppSettings.API_ENDPOINT + 'users/login.json', JSON.stringify({ email: email, password: password }), options)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
@@ -18,6 +19,9 @@ export class AuthenticationService {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
         }
+      })
+      .catch((err: Response) => {
+        return Observable.throw(err.json());
       });
   }
 
@@ -25,7 +29,7 @@ export class AuthenticationService {
     // TODO: Implement Check Pswd
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let options = new RequestOptions({ headers: headers, method: 'post' });
-    return this.http.post('http://localhost/nessi-api/users/register.json', JSON.stringify({ firstname: firstname, lastname: lastname,
+    return this.http.post(AppSettings.API_ENDPOINT + 'users/register.json', JSON.stringify({ firstname: firstname, lastname: lastname,
       email: email, password: password }), options)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response

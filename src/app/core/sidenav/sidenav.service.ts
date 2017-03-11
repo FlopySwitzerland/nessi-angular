@@ -21,10 +21,10 @@ export class SidenavService {
 
     let dashboard = menu.addItem('Dashboard', 'dashboard', '/', 1);
 
-    menu.addItem('Inbox', 'mail', '/apps/inbox', 1, '22', '#7986CC');
-    menu.addItem('Chat', 'chat', '/apps/chat', 2, '14', '#E15C74');
+    menu.addItem('Marks', 'library_books', '/apps/inbox', 1, '22', '#7986CC');
+    menu.addItem('Schools and Classes', 'school', '/apps/chat', 2);
     menu.addItem('Calendar', 'date_range', '/apps/calendar', 3);
-
+/*
     let components =  menu.addItem('Components', 'layers', null, 3);
     menu.addSubItem(components, 'Buttons', '/components/buttons', 1);
     menu.addSubItem(components, 'Cards', '/components/cards', 2);
@@ -66,7 +66,7 @@ export class SidenavService {
     let level2 = menu.addSubItem(level1, 'Level 2', '/level1/level2', 2);
     let level3 = menu.addSubItem(level2, 'Level 3', '/level1/level2/level3', 3);
     let level4 = menu.addSubItem(level3, 'Level 4', '/level1/level2/level3/level4', 4);
-    let level5 = menu.addSubItem(level4, 'Level 5', '/level1/level2/level3/level4/level5', 5);
+    let level5 = menu.addSubItem(level4, 'Level 5', '/level1/level2/level3/level4/level5', 5);*/
   }
 
   addItem(name: string, icon: string, route: string, position: number, badge?: string, badgeColor?: string) {

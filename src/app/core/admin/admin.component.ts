@@ -3,6 +3,9 @@ import {Subscription} from "rxjs";
 import {MediaChange, ObservableMedia} from "@angular/flex-layout";
 import {Router, NavigationEnd} from "@angular/router";
 import * as screenfull from 'screenfull';
+import {User} from "../../models/user";
+import {AuthenticationService} from "../../services/authentication.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'ms-admin',
@@ -19,6 +22,7 @@ export class AdminComponent implements OnInit {
   sidenavOpen: boolean = false;
   sidenavMode: string = 'side';
   isMobile: boolean = false;
+  currentUser: User;
 
   private _routerEventsSubscription: Subscription;
 
@@ -29,9 +33,14 @@ export class AdminComponent implements OnInit {
   constructor(
     private media: ObservableMedia,
     private router: Router,
-  ) { }
+    private authenticationService: AuthenticationService,
+    private userService: UserService) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser')).data;
+  }
+
 
   ngOnInit() {
+    console.log(this.currentUser);
     this._mediaSubscription = this.media.asObservable().subscribe((change: MediaChange) => {
       let isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
 
@@ -60,5 +69,10 @@ export class AdminComponent implements OnInit {
 
   onActivate(e, scrollContainer) {
     scrollContainer.scrollTop = 0;
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }

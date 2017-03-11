@@ -33,11 +33,6 @@ import {HomeComponent} from './pages/home/home.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'login',
     component: LoginComponent
   },
@@ -50,9 +45,22 @@ const appRoutes: Routes = [
     component: ForgotPasswordComponent
   },
 
+  /* ADMIN */
+  {
+    path: '',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      },
+    ]
+  },
+
   /* DEMO */
   {
-    path: 'admin',
+    path: 'demo',
     component: AdminComponent,
     children: [
       {

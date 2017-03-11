@@ -33,7 +33,7 @@
     <button class="user-button" md-button [mdMenuTriggerFor]="menu">
       <div fxLayout="row" fxLayoutAlign="start center">
         <img src="assets/img/avatars/noavatar.png" class="avatar-flex"/>
-        <span fxHide="true" fxHide.gt-sm="false" style="font-weight: 500; margin-left: 5px;">David Smith</span>
+        <span fxHide="true" fxHide.gt-sm="false" style="font-weight: 500; margin-left: 5px;">{{currentUser.firstname}} {{currentUser.lastname}}</span>
         <md-icon fxHide="true" fxHide.gt-sm="false">keyboard_arrow_down</md-icon>
       </div>
     </button>
@@ -58,7 +58,7 @@
         <span>Help</span>
       </button>
       <md-divider></md-divider>
-      <button [routerLink]="['/login']" md-menu-item>
+      <button (click)="logout()" md-menu-item>
         <md-icon>exit_to_app</md-icon>
         <span>Logout</span>
       </button>
