@@ -29,6 +29,8 @@ import {ButtonsComponent} from './demo/components/buttons/buttons.component';
 import {DashboardV1Component} from './demo/custom-pages/dashboard-v1/dashboard-v1.component';
 import {AuthGuard} from './guards/auth.guard';
 import {HomeComponent} from './pages/home/home.component';
+import {SettingsComponent} from './pages/settings/settings.component';
+import {MarksComponent} from "./pages/marks/marks.component";
 
 
 const appRoutes: Routes = [
@@ -54,6 +56,14 @@ const appRoutes: Routes = [
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+      {
+        path: 'marks',
+        component: MarksComponent
       },
     ]
   },

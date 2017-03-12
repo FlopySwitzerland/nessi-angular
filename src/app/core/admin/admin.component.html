@@ -45,11 +45,7 @@
 
 
     <md-menu class="user-menu" x-position="before" y-position="below" #menu="mdMenu">
-      <button md-menu-item>
-        <md-icon>account_circle</md-icon>
-        <span>Profile</span>
-      </button>
-      <button md-menu-item>
+      <button [routerLink]="['/settings']" md-menu-item>
         <md-icon>settings</md-icon>
         <span>Settings</span>
       </button>

@@ -1,0 +1,142 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex fxFlex.gt-md="60%">
+    <md-card fxFlex="90%" style="padding: 0;margin: 24px 0">
+      <md-card-content>
+        <md-tab-group [selectedIndex]="0">
+          <md-tab label="GENERAL">
+            <form #form="ngForm">
+              <div fxLayout="column" style="padding: 16px;" >
+                <h4>Preferences</h4>
+
+                <h5 style="margin: 0">Time Format</h5>
+                <md-radio-group>
+                  <md-radio-button value="1">12 Hour</md-radio-button>
+                  <md-radio-button value="2" selected>24 Hour</md-radio-button>
+                </md-radio-group>
+
+                <br>
+                <md-divider class="mat-divider"></md-divider>
+                <br>
+                <h4>Locale</h4>
+                <p>Setting the culture affects the format and language dates and time are displayed in.</p>
+                <md-select>
+                  <md-option>English</md-option>
+                  <md-option>French</md-option>
+                </md-select>
+
+                <br>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button color="primary"
+                          md-raised-button
+                          type="button">Update</button>
+                </div>
+              </div>
+            </form>
+          </md-tab>
+          <md-tab label="PROFILE">
+            <form #form2="ngForm">
+              <div fxLayout="column" style="padding: 16px;" >
+                <h4>Profile Details</h4>
+                <div fxLayout="column" fxLayout.gt-md="row">
+                  <md-input-container fxFlex>
+                    <input md-input
+                           name="firstname"
+                           value="{{currentUser.firstname}}"
+                           required
+                           placeholder="Firstname">
+                  </md-input-container>
+                </div>
+                <div fxLayout="column" fxLayout.gt-md="row">
+                  <md-input-container fxFlex>
+                    <input md-input
+                           name="lastname"
+                           value="{{currentUser.lastname}}"
+                           required
+                           placeholder="Lastname">
+                  </md-input-container>
+                </div>
+                <div fxLayout="column" fxLayout.gt-md="row">
+                  <md-input-container fxFlex>
+                    <input md-input
+                           name="email"
+                           value="{{currentUser.email}}"
+                           required
+                           placeholder="E-Mail">
+                  </md-input-container>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button color="primary"
+                          md-raised-button
+                          type="button">Update</button>
+                </div>
+              </div>
+            </form>
+          </md-tab>
+          <md-tab label="PASSWORD">
+            <form #form3="ngForm">
+              <div fxLayout="column" style="padding: 16px;" >
+                <h4>Account Password</h4>
+
+                <md-input-container fxFlex>
+                  <input md-input
+                         name="oldpassword"
+                         required
+                         ngModel
+                         placeholder="Old Password">
+                </md-input-container>
+
+                <md-input-container fxFlex>
+                  <input md-input
+                         name="password"
+                         required
+                         ngModel
+                         placeholder="New Password">
+                </md-input-container>
+
+                <md-input-container fxFlex>
+                  <input md-input
+                         name="confirmpassword"
+                         required
+                         ngModel
+                         placeholder="New Password (Confirm)">
+                </md-input-container>
+
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button color="primary"
+                          md-raised-button
+                          type="button">Update</button>
+                </div>
+                <br>
+                <md-divider class="mat-divider"></md-divider>
+                <br>
+                <h4>Two-step verification</h4>
+
+                <p>Your account is <b>not</b> protected with two-step verification.</p>
+
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button color="primary"
+                          md-raised-button
+                          type="button">Enable Two-step verification</button>
+                </div>
+
+              </div>
+            </form>
+          </md-tab>
+          <md-tab label="ABOUT">
+            <div fxLayout="column" style="padding: 16px;">
+              <h4>Legal</h4>
+              <p>Through continued use of Nessi you agree to our privacy policy and terms of service which can be found on our website.</p>
+              <br>
+              <h4>Support + Feedback</h4>
+              <p>If you have spotted a bug, found something that needs improving or would simply like to request a feature please get in touch.</p>
+
+
+            </div>
+          </md-tab>
+        </md-tab-group>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
+
+

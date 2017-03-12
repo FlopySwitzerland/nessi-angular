@@ -44,8 +44,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 
     this.breadcrumbService.addFriendlyNameForRoute('/', "Dashboard");
-    this.breadcrumbService.addFriendlyNameForRoute('/apps', "Apps");
-    this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
+    this.breadcrumbService.addFriendlyNameForRoute('/account', "Account");
+    this.breadcrumbService.addFriendlyNameForRoute('/account/profile', "Profile");
+   /* this.breadcrumbService.addFriendlyNameForRoute('/apps/inbox', "Inbox");
     this.breadcrumbService.addFriendlyNameForRoute('/apps/calendar', "Calendar");
     this.breadcrumbService.addFriendlyNameForRoute('/apps/chat', "Chat");
     this.breadcrumbService.addFriendlyNameForRoute('/components', "Components");
@@ -76,7 +77,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     this.breadcrumbService.addFriendlyNameForRoute('/level1/level2', "Level 2");
     this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3', "Level 3");
     this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4', "Level 4");
-    this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4/level5', "Level 5");
+    this.breadcrumbService.addFriendlyNameForRoute('/level1/level2/level3/level4/level5', "Level 5");*/
 
   }
 

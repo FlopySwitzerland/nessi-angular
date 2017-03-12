@@ -74,6 +74,7 @@ import { AlertService } from "./services/alert.service";
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MarksComponent } from './pages/marks/marks.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -137,7 +138,8 @@ const sortablejsConfig: SortablejsOptions = {
     ChatComponent,
     HomeComponent,
     RegisterComponent,
-    MarksComponent
+    MarksComponent,
+    SettingsComponent
   ],
   entryComponents: [
     DemoDialog,

@@ -1,3 +1,26 @@
-<p>
-  marks works!
-</p>
+<div fxLayout="column" fxLayout.gt-md="row">
+  <div fxFlex class="md-elevation-z2">
+
+    <table class="table table-condensed table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>School & Classe</th>
+        <th>Branche</th>
+        <th>Exam Date</th>
+        <th>Mark</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of rows">
+        <td>1</td>
+        <td>{{ row.school }} - {{ row.schoolclass }}</td>
+        <td>{{ row.branche }}</td>
+        <td>{{ row.examdate }}</td>
+        <td>{{ row.note }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
