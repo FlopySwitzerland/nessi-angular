@@ -12,7 +12,7 @@ export class BreadcrumbsComponent implements OnInit, OnChanges {
   @Input('prefix')
   prefix: string  = '';
 
-  private _urls: string[];
+  urls: string[];
   private _routerSubscription: any;
 
   constructor(
@@ -21,37 +21,37 @@ export class BreadcrumbsComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this._urls = [];
+    this.urls = [];
 
     if (this.prefix.length > 0) {
-      this._urls.unshift(this.prefix);
+      this.urls.unshift(this.prefix);
     }
 
     this._routerSubscription = this.router.events.subscribe((navigationEnd:NavigationEnd) => {
-      this._urls.length = 0; //Fastest way to clear out array
+      this.urls.length = 0; //Fastest way to clear out array
       this.generateBreadcrumbTrail(navigationEnd.urlAfterRedirects ? navigationEnd.urlAfterRedirects : navigationEnd.url);
     });
   }
 
   ngOnChanges(): void {
-    if (!this._urls) {
+    if (!this.urls) {
       return;
     }
 
-    this._urls.length = 0;
+    this.urls.length = 0;
     this.generateBreadcrumbTrail(this.router.url);
   }
 
   generateBreadcrumbTrail(url: string): void {
     if (!this.breadcrumbService.isRouteHidden(url)) {
       //Add url to beginning of array (since the url is being recursively broken down from full url to its parent)
-      this._urls.unshift(url);
+      this.urls.unshift(url);
     }
 
     if (url.lastIndexOf('/') > 0) {
       this.generateBreadcrumbTrail(url.substr(0, url.lastIndexOf('/'))); //Find last '/' and add everything before it as a parent route
     } else if (this.prefix.length > 0) {
-      this._urls.unshift(this.prefix);
+      this.urls.unshift(this.prefix);
     }
   }
 

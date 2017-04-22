@@ -30,40 +30,40 @@ export class FormElementsComponent implements OnInit {
   inputFieldHTML: string = `
   <div fxLayout="column" fxLayout.gt-md="row">
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="First Name">
     </md-input-container>
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Last Name">
     </md-input-container>
   </div>
   <div fxLayout="column" fxLayout.gt-md="row">
     <md-input-container fxFlex dividerColor="accent">
-      <input md-input
+      <input mdInput
              placeholder="Pre-filled Input + Accent color" value="Material Design">
     </md-input-container>
   </div>
   <div fxLayout="column" fxLayout.gt-md="row">
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Address">
       <span md-prefix><md-icon>place</md-icon></span>
     </md-input-container>
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="City">
       <span md-prefix><md-icon>location_city</md-icon></span>
     </md-input-container>
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Country">
       <span md-suffix><md-icon>local_airport</md-icon></span>
     </md-input-container>
   </div>
   <div fxLayout="column" fxLayout.gt-md="row">
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Character count (max. 100)"
              maxlength="100"
              #characterCountHintExample
@@ -73,15 +73,15 @@ export class FormElementsComponent implements OnInit {
   </div>
   <div fxLayout="column" fxLayout.gt-md="row">
     <md-input-container fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Primary Color">
     </md-input-container>
     <md-input-container dividerColor="accent" fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Accent Color">
     </md-input-container>
     <md-input-container dividerColor="warn" fxFlex>
-      <input md-input
+      <input mdInput
              placeholder="Warn Color">
     </md-input-container>
   </div>

@@ -16,7 +16,7 @@ import { routeAnimation } from "../../../route.animation";
 export class ListsComponent implements OnInit {
 
   twoLineListHTML: string = `
-  <md-list class="demo-list md-elevation-z2">
+  <md-list class="demo-list mat-elevation-z2">
     <md-list-item>
       <img md-list-avatar src="assets/img/avatars/John.png">
       <h3 md-line>John</h3>
@@ -45,7 +45,7 @@ export class ListsComponent implements OnInit {
   `;
 
   threeLineListHTML: string = `
-  <md-list class="demo-list md-elevation-z2">
+  <md-list class="demo-list mat-elevation-z2">
     <md-list-item>
       <img md-list-avatar src="assets/img/avatars/John.png">
       <h3 md-line>John</h3>
@@ -68,7 +68,7 @@ export class ListsComponent implements OnInit {
   `;
 
   threeLineListWithoutAvatarsHTML: string = `
-  <md-list class="demo-list md-elevation-z2">
+  <md-list class="demo-list mat-elevation-z2">
     <md-list-item>
       <h3 md-line>John</h3>
       <p md-line>Brunch?</p>
@@ -88,7 +88,7 @@ export class ListsComponent implements OnInit {
   `;
 
   oneLineList: string = `
-  <md-list class="demo-list md-elevation-z2">
+  <md-list class="demo-list mat-elevation-z2">
     <md-list-item>
       <h3 md-line>John</h3>
     </md-list-item>

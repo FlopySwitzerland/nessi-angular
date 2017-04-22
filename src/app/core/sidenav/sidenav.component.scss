@@ -1,6 +1,6 @@
 @import "../../../styles/_var";
 
-md-toolbar.sidenav-toolbar {
+md-toolbar.mat-toolbar.sidenav-toolbar {
   background: $background-color__sidenav-toolbar;
   padding: 0 14px 0 24px;
   z-index: 3;
@@ -23,7 +23,6 @@ md-toolbar.sidenav-toolbar {
     transform: rotate(-180deg);
   }
 }
-
 .nessi-logo-txt{
   margin-left: 50px;
   vertical-align: middle;

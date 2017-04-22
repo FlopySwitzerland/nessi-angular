@@ -1,0 +1,76 @@
+<div class="margin-top" fxLayout="row" fxLayoutAlign="center stretch" fxLayoutWrap="wrap">
+
+  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100">
+    <div class="activity-card md-elevation-z2">
+      <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column">
+          <span class="title">Academic Years</span>
+        </div>
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>add_circle</md-icon>
+        </button>
+      </div>
+      <div class="content">
+        <md-nav-list>
+          <a href="javascript:" md-list-item *ngFor="let academicyear of academicyears">
+            <h3 md-line> {{ academicyear.name }} </h3>
+            <p md-line>
+              <span class="title"> {{ academicyear.startenddates }} </span>
+            </p>
+          </a>
+        </md-nav-list>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100">
+    <div class="activity-card md-elevation-z2">
+      <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column">
+          <span class="title">School Classes</span>
+        </div>
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>add_circle</md-icon>
+        </button>
+      </div>
+      <div class="content">
+        <md-nav-list>
+          <a href="javascript:" md-list-item *ngFor="let schoolclass of schoolclasses">
+            <h3 md-line> {{ schoolclass.name }} </h3>
+            <p md-line>
+              <span class="title"> {{ schoolclass.establishment }} </span>
+            </p>
+          </a>
+        </md-nav-list>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex="40" fxFlex.md="50" fxFlex.sm="100">
+    <div class="activity-card md-elevation-z2">
+      <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column">
+          <span class="title">Subjects</span>
+        </div>
+        <span fxFlex></span>
+        <button md-icon-button>
+          <md-icon>add_circle</md-icon>
+        </button>
+      </div>
+      <div class="content">
+        <md-nav-list>
+          <a href="javascript:" md-list-item *ngFor="let subject of subjects">
+            <img md-list-avatar [src]="'assets/img/branches/'+subject.image" alt="{{ subject.name }}">
+            <h3 md-line> {{ subject.name }} </h3>
+            <p md-line>
+              <span class="title"> {{ subject.subject }} </span>
+              <span class="extra"> -- {{ subject.content }} </span>
+            </p>
+          </a>
+        </md-nav-list>
+      </div>
+    </div>
+  </div>
+
+</div>

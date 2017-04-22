@@ -1,9 +1,9 @@
 <div class="header"></div>
 <div class="chat-container">
-  <div class="chat md-elevation-z4">
+  <div class="chat mat-elevation-z4">
     <md-sidenav-container>
 
-      <md-sidenav class="md-elevation-z2" mode="side" [opened]="true" #chatSidenav>
+      <md-sidenav class="mat-elevation-z2" mode="side" [opened]="true" #chatSidenav>
         <div class="sidenav-container">
           <md-toolbar>
             <div class="toolbar" fxLayout="row" fxLayoutAlign="start center">
@@ -64,10 +64,10 @@
               <div class="chat-message" *ngFor="let message of chats[0].messages" [ngSwitch]="message.who" fxLayout="column" fxLayoutAlign="end start">
                 <div class="partner" *ngSwitchCase="'partner'" fxFlexAlign="start" fxLayout="row" fxLayoutAlign="start start">
                   <img class="avatar" [src]="activeChat.picture">
-                  <span class="message md-elevation-z1">{{ message.message }}</span>
+                  <span class="message mat-elevation-z1">{{ message.message }}</span>
                 </div>
                 <div class="me" *ngSwitchCase="'me'" fxFlexAlign="end" fxLayout="row" fxLayoutAlign="end start">
-                  <span class="message md-elevation-z1">{{ message.message }}</span>
+                  <span class="message mat-elevation-z1">{{ message.message }}</span>
                   <img class="avatar" src="assets/img/avatars/noavatar.png">
                 </div>
               </div>
@@ -77,7 +77,7 @@
 
           <div class="chat-respond" fxLayout="row" fxLayoutAlign="start center">
             <md-input-container fxFlex>
-              <textarea md-input (keyup.enter)="send()" [(ngModel)]="newMessage" placeholder="Type and hit enter to send your message"></textarea>
+              <textarea mdInput (keyup.enter)="send()" [(ngModel)]="newMessage" placeholder="Type and hit enter to send your message"></textarea>
             </md-input-container>
             <button (click)="send()" md-fab color="primary"><md-icon>send</md-icon></button>
           </div>

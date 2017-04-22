@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, HostBinding, ViewChild, ElementRef } from '@angular/core';
-import { Input } from "@angular/core/src/metadata/directives";
+import { Input } from "@angular/core";
 import { SidenavItem } from "./sidenav-item.model";
 import { SidenavService } from "../sidenav/sidenav.service";
 

@@ -1,15 +1,15 @@
 <div fxLayout="row" fxLayoutAlign="center center" style="height: 100%;">
-  <div class="login md-elevation-z12">
+  <div class="login mat-elevation-z12">
     <div class="login-header" fxLayout="column" fxLayoutAlign="center center">
       <img src="assets/img/nessi_square.svg" class="login-logo">
     </div>
     <form #form="ngForm" (ngSubmit)="login()">
       <div class="login-content" fxLayout="column" fxLayoutAlign="start stretch">
         <md-input-container>
-          <input md-input type="text" placeholder="E-Mail" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+          <input mdInput type="text" placeholder="E-Mail" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
         </md-input-container>
         <md-input-container>
-          <input md-input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <input mdInput type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
         </md-input-container>
         <div class="extra-options" fxLayout="row" fxLayoutAlign="space-between center">
           <md-checkbox class="remember-me">Remember Me</md-checkbox>

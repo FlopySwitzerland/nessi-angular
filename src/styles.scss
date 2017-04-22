@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
-@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import "styles/_var";
 @import 'styles/_tables';
 @import 'styles/_charts';
@@ -96,7 +96,7 @@ p {
   font-size: 18px;
   vertical-align: middle;
   height: 16px;
-  width: 14px;
+  width: 22px;
 }
 
 .demo-list {
@@ -137,8 +137,8 @@ p {
   vertical-align: middle;
 }
 
-.quickpanel .md-tab-body-content,
-.quickpanel .md-tab-body-wrapper,
+.quickpanel .mat-tab-body-content,
+.quickpanel .mat-tab-body-wrapper,
 .quickpanel md-tab-body,
 .quickpanel md-tab-group {
   height: 100%;

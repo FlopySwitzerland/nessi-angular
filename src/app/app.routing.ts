@@ -30,7 +30,8 @@ import {DashboardV1Component} from './demo/custom-pages/dashboard-v1/dashboard-v
 import {AuthGuard} from './guards/auth.guard';
 import {HomeComponent} from './pages/home/home.component';
 import {SettingsComponent} from './pages/settings/settings.component';
-import {MarksComponent} from "./pages/marks/marks.component";
+import {MarksComponent} from './pages/marks/marks.component';
+import { SubjectsComponent } from './pages/subjects/subjects.component';
 
 
 const appRoutes: Routes = [
@@ -64,6 +65,10 @@ const appRoutes: Routes = [
       {
         path: 'marks',
         component: MarksComponent
+      },
+      {
+        path: 'subjects',
+        component: SubjectsComponent
       },
     ]
   },

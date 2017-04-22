@@ -1,10 +1,9 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import {Chat} from "./chat.model";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {chatDemoData} from "./chat.demo";
 import * as _ from 'lodash';
-import {PerfectScrollbarComponent} from "angular2-perfect-scrollbar";
 import * as moment from 'moment';
 import {fadeInAnimation} from "../../../route.animation";
+import {PerfectScrollbarComponent} from "ngx-perfect-scrollbar";
 
 @Component({
   selector: 'ms-chat',

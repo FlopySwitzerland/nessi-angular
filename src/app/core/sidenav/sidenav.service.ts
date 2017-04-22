@@ -160,7 +160,7 @@ export class SidenavService {
     this.nextCurrentlyOpen(currentlyOpen);
   }
 
-  findByRouteRecursive(route: String, collection: SidenavItem[]) {
+  findByRouteRecursive(route: string, collection: SidenavItem[]) {
     let result = _.find(collection, { 'route': route });
 
     if (!result) {

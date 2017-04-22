@@ -1,5 +1,5 @@
 <div class="inbox" fxLayout="column">
-  <div class="header md-elevation-z2"></div>
+  <div class="header mat-elevation-z2"></div>
   <div class="container" fxLayout="row">
     <div class="navigation" fxFlex="250px" fxHide="true" fxHide.gt-md="false">
 
@@ -72,14 +72,14 @@
 
     <div class="content-container" fxFlex fxLayout="column">
 
-      <div class="search md-elevation-z2" fxLayout="row">
+      <div class="search mat-elevation-z2" fxLayout="row">
         <div fxLayout="row" fxLayoutAlign="center center">
           <md-icon>search</md-icon>
         </div>
         <input fxFlex type="search" placeholder="Search...">
       </div>
 
-      <div class="mails-container md-elevation-z2" fxFlex>
+      <div class="mails-container mat-elevation-z2" fxFlex>
         <div *ngIf="!shownMailDetail" class="toolbar" fxLayout="row" fxLayoutAlign="start center">
           <md-checkbox class="checkbox" (click)="toggleSelectAllThreads()"></md-checkbox>
           <span fxFlex><!-- fill space --></span>
@@ -143,7 +143,7 @@
                   <md-icon *ngIf="!mail.starred" class="star">star_border</md-icon>
                   <md-icon *ngIf="mail.starred" class="star active">star</md-icon>
                 </button>
-                <img fxHide="true" fxHide.gt-sm="false" class="from-avatar" src="http://placehold.it/40x40">
+                <img fxHide="true" fxHide.gt-sm="false" class="from-avatar" src="//placehold.it/40x40">
                 <span class="from-name">{{ mail.from.name }}</span>
               </div>
               <p class="content-wrapper" fxLayout="row" fxLayoutAlign="start center">
@@ -170,7 +170,7 @@
           <div class="mail-detail" *ngIf="shownMailDetail">
 
             <div class="mail-header" fxLayout="row">
-              <img class="avatar" src="http://placehold.it/40x40">
+              <img class="avatar" src="//placehold.it/40x40">
               <div class="mail-info" fxLayout="column">
                 <span class="from">{{ shownMailDetail.from.name }}</span>
                 <span class="to">to me <md-icon>arrow_drop_down</md-icon></span>

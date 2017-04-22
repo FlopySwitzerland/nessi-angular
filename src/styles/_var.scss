@@ -43,7 +43,7 @@ $padding-left-right__sidenav-list__md-list-item: 24px;
 $margin-left__sidenav-list__item-name: $padding-left-right__sidenav-list__md-list-item;
 $width-height__sidenav-list__icon: 18px;
 
-$max-width__icon-sidenav: ($padding-left-right__sidenav-list__md-list-item * 2) + $width-height__sidenav-list__icon;
+$max-width__icon-sidenav: ($padding-left-right__sidenav-list__md-list-item * 2) + $width-height__sidenav-list__icon + 2;
 
 $z-index__md-sidenav: 4;
 $z-index__md-sidenav-content: 5;

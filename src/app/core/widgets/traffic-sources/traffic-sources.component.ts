@@ -11,6 +11,7 @@ export class TrafficSourcesComponent implements OnInit {
   @Input('subTitle') subTitle: string = 'Total Visits over the last week';
   @Input('chartData') chartData: any[];
   @Input('chartOptions') chartOptions: any;
+  @Input('textColor') textColor: any;
 
   d3: D3;
   isLoading: boolean = false;

@@ -1,5 +1,37 @@
-<div fxLayout="column" fxLayout.gt-md="row">
-  <div fxFlex class="md-elevation-z2">
+
+<div class="margin-top" fxLayout="row" fxLayoutAlign="center stretch" fxLayoutWrap="wrap">
+
+  <div class="margin-bottom-sm" fxLayout="column" fxFlex="100%" fxFlex.md="39.5%" fxFlex.gt-md>
+
+    <div class="margin-top">
+      <div class="activity-card md-elevation-z2">
+        <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
+          <div fxLayout="column">
+            <span class="title">Branches</span>
+            <span class="extra">6 Branches in 2 Establishments</span>
+          </div>
+          <span fxFlex></span>
+          <button md-icon-button (click)="openDialog()">
+            <md-icon>add_circle</md-icon>
+          </button>
+        </div>
+        <div class="content">
+          <md-nav-list>
+            <a href="javascript:" md-list-item *ngFor="let branche of branches">
+              <img md-list-avatar [src]="'assets/img/branches/'+branche.image" alt="{{ branche.name }}">
+              <h3 md-line> {{ branche.name }} </h3>
+              <p md-line>
+                <span class="title"> {{ branche.subject }} </span>
+                <span class="extra"> -- {{ branche.content }} </span>
+              </p>
+            </a>
+          </md-nav-list>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="margin-bottom-sm" fxLayout="column" fxFlex.gt-md fxFlex="100%" fxFlex.md="59.5%" fxFlexOffset.gt-sm="1%">
 
     <table class="table table-condensed table-hover">
       <thead>
@@ -21,6 +53,8 @@
       </tr>
       </tbody>
     </table>
-
   </div>
+
+
 </div>
+
