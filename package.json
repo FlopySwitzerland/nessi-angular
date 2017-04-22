@@ -40,7 +40,7 @@
     "screenfull": "^3.0.2",
     "sortablejs": "^1.5.1",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.8.4"
+    "zone.js": "0.8.5"
   },
   "devDependencies": {
     "@angular/cli": "^1.0.0",

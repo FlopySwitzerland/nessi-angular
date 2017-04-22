@@ -22,7 +22,7 @@ export class AdminComponent implements OnInit {
   sidenavOpen: boolean = false;
   sidenavMode: string = 'side';
   isMobile: boolean = false;
-  currentUser: User;
+  currentUser: any;
 
   private _routerEventsSubscription: Subscription;
 
@@ -35,7 +35,7 @@ export class AdminComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser')).data;
+    this.currentUser = localStorage.getItem('user.firstname')+" "+localStorage.getItem('user.lastname');
   }
 
 

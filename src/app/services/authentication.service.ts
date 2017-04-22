@@ -3,6 +3,7 @@ import {Http, Headers, Response, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {AppSettings} from "../app.settings";
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthenticationService {
@@ -17,7 +18,11 @@ export class AuthenticationService {
         let user = response.json();
         if (user && user.data.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          localStorage.setItem('user.firstname', user.data.firstname);
+          localStorage.setItem('user.lastname', user.data.lastname);
+          localStorage.setItem('user.email', user.data.email);
+          localStorage.setItem('token', user.data.token);
+          console.log(localStorage.getItem('token'))
         }
       })
       .catch((err: Response) => {
@@ -36,7 +41,7 @@ export class AuthenticationService {
         let user = response.json();
         if (user && user.data.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user));
         }
       });
   }
@@ -44,6 +49,10 @@ export class AuthenticationService {
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('user');
+  }
+
+  loggedIn() {
+    return tokenNotExpired();
   }
 }

@@ -1,6 +1,6 @@
 <div class="margin-top" fxLayout="row" fxLayoutAlign="center stretch" fxLayoutWrap="wrap">
 
-  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100">
+  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100" fxFlex.xs="100">
     <div class="activity-card md-elevation-z2">
       <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column">
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100">
+  <div fxFlex="20" fxFlex.md="25" fxFlex.sm="100" fxFlex.xs="100">
     <div class="activity-card md-elevation-z2">
       <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column">
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <div fxFlex="40" fxFlex.md="50" fxFlex.sm="100">
+  <div fxFlex="40" fxFlex.md="50" fxFlex.sm="100" fxFlex.xs="100">
     <div class="activity-card md-elevation-z2">
       <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column">
@@ -61,7 +61,7 @@
       <div class="content">
         <md-nav-list>
           <a href="javascript:" md-list-item *ngFor="let subject of subjects">
-            <img md-list-avatar [src]="'assets/img/branches/'+subject.image" alt="{{ subject.name }}">
+            <img md-list-avatar [src]="'assets/img/subjects/'+subject.image" alt="{{ subject.name }}">
             <h3 md-line> {{ subject.name }} </h3>
             <p md-line>
               <span class="title"> {{ subject.subject }} </span>
