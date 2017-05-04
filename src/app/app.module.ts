@@ -80,6 +80,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { SubjectsComponent } from './pages/subjects/subjects.component';
 import {SearchService} from './services/search.service';
 import { AddSchoolComponent } from './pages/schools/add-school/add-school.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -147,7 +148,8 @@ const sortablejsConfig: SortablejsOptions = {
     MarksComponent,
     SettingsComponent,
     SubjectsComponent,
-    AddSchoolComponent
+    AddSchoolComponent,
+    LandingComponent
   ],
   entryComponents: [
     DemoDialog,
