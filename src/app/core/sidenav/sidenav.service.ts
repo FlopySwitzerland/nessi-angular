@@ -22,7 +22,7 @@ export class SidenavService {
     let dashboard = menu.addItem('Dashboard', 'dashboard', '/', 1);
 
     menu.addItem('Marks', 'library_books', '/marks', 1, '22', '#7986CC');
-    menu.addItem('Schools and Classes', 'school', '/school', 2);
+    menu.addItem('Schools and Subjects', 'school', '/subjects', 2);
     menu.addItem('Calendar', 'date_range', '/calendar', 3);
 /*
     let components =  menu.addItem('Components', 'layers', null, 3);

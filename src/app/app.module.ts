@@ -79,6 +79,7 @@ import { MarksComponent } from './pages/marks/marks.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { SubjectsComponent } from './pages/subjects/subjects.component';
 import {SearchService} from './services/search.service';
+import { AddSchoolComponent } from './pages/schools/add-school/add-school.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -145,7 +146,8 @@ const sortablejsConfig: SortablejsOptions = {
     RegisterComponent,
     MarksComponent,
     SettingsComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    AddSchoolComponent
   ],
   entryComponents: [
     DemoDialog,
