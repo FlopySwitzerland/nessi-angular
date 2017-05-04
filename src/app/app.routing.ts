@@ -32,6 +32,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {SettingsComponent} from './pages/settings/settings.component';
 import {MarksComponent} from './pages/marks/marks.component';
 import { SubjectsComponent } from './pages/subjects/subjects.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 
 const appRoutes: Routes = [
@@ -47,7 +48,10 @@ const appRoutes: Routes = [
     path: 'forgot-password',
     component: ForgotPasswordComponent
   },
-
+  {
+    path: 'landing',
+    component: LandingComponent,
+  },
   /* ADMIN */
   {
     path: '',
