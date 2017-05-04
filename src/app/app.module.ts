@@ -80,6 +80,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { SubjectsComponent } from './pages/subjects/subjects.component';
 import {SearchService} from './services/search.service';
 import { AddSchoolComponent } from './pages/schools/add-school/add-school.component';
+import {ModalComponent} from './core/modal/modal.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -99,6 +100,7 @@ const sortablejsConfig: SortablejsOptions = {
     ButtonsComponent,
     FormElementsComponent,
     SearchComponent,
+    ModalComponent,
     BreadcrumbsComponent,
     ListsComponent,
     WidgetComponent,

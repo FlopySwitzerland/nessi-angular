@@ -6,19 +6,19 @@
     <form #form="ngForm" (ngSubmit)="register()">
       <div class="register-content" fxLayout="column" fxLayoutAlign="start stretch">
         <md-input-container>
-          <input md-input placeholder="Firstname" type="text" name="firstname" required [(ngModel)]="model.firstname">
+          <input mdInput placeholder="Firstname" type="text" name="firstname" required [(ngModel)]="model.firstname">
         </md-input-container>
         <md-input-container>
-          <input md-input placeholder="Lastname" type="text" name="lastname" required [(ngModel)]="model.lastname">
+          <input mdInput placeholder="Lastname" type="text" name="lastname" required [(ngModel)]="model.lastname">
         </md-input-container>
         <md-input-container>
-          <input md-input placeholder="E-Mail" type="text" name="email" required [(ngModel)]="model.email">
+          <input mdInput placeholder="E-Mail" type="text" name="email" required [(ngModel)]="model.email">
         </md-input-container>
         <md-input-container>
-          <input md-input placeholder="Password" type="password" name="password" required [(ngModel)]="model.password">
+          <input mdInput placeholder="Password" type="password" name="password" required [(ngModel)]="model.password">
         </md-input-container>
         <md-input-container>
-          <input md-input placeholder="Password (Confirm)" type="password" name="password-confirm" required [(ngModel)]="model.passwordConfirm">
+          <input mdInput placeholder="Password (Confirm)" type="password" name="password-confirm" required [(ngModel)]="model.passwordConfirm">
         </md-input-container>
         <div class="extra-options" fxLayout="row" fxLayoutAlign="center center">
           <md-checkbox class="remember-me">I accept the <a href="#">terms and conditions.</a></md-checkbox>

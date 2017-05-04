@@ -88,4 +88,9 @@ export class SubjectsComponent implements OnInit {
     ];
   }
 
+
+  addSchoolClass(){
+
+  }
+
 }
