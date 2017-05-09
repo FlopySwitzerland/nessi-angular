@@ -1,0 +1,28 @@
+<h1 md-dialog-title>New Academic Year</h1>
+
+<md-dialog-content>
+  <div fxLayout="column" fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="start start" >
+      <md-input-container fxFlex>
+        <input mdInput placeholder="Start Date" type="date">
+      </md-input-container>
+
+      <md-input-container fxFlex>
+        <input mdInput placeholder="End Date" type="date">
+      </md-input-container>
+    </div>
+
+    <h3>Terms</h3>
+
+    <div class="text ng-scope" fxFlex>
+      <h4>What Are Academic Years?</h4>
+      <p>An academic year and its terms are used to represent your school year and any terms (eg. semesters, trimesters, quarters) that you may have.</p>
+    </div>
+
+  </div>
+</md-dialog-content>
+
+<md-dialog-actions align="end">
+  <button md-button (click)="dialogRef.close('No!')">Cancel</button>
+  <button md-button color="primary" (click)="dialogRef.close('Yes!')">Save</button>
+</md-dialog-actions>

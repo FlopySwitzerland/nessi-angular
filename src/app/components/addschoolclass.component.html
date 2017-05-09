@@ -1,0 +1,19 @@
+<h1 md-dialog-title>New SchoolClass</h1>
+<form #schoolClassForm="ngForm" (submit)="save(schoolClassForm)" >
+<md-dialog-content>
+
+  <div fxLayout="column" fxLayout="column" fxLayoutAlign="start stretch">
+    <md-input-container fxFlex>
+      <input mdInput placeholder="Name" ngModel name="name">
+    </md-input-container>
+
+  </div>
+
+  {{schoolClassForm.value | json}}
+</md-dialog-content>
+
+<md-dialog-actions align="end">
+  <button md-button (click)="dialogRef.close">Cancel</button>
+  <button md-button color="primary" type="submit">Save</button>
+</md-dialog-actions>
+</form>

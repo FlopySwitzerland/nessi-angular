@@ -10,7 +10,7 @@
 
                 <h5 style="margin: 0">Time Format</h5>
                 <md-radio-group>
-                  <md-radio-button value="1">12 Hour</md-radio-button>
+                  <md-radio-button value="1">12 Hour</md-radio-button><br>
                   <md-radio-button value="2" selected>24 Hour</md-radio-button>
                 </md-radio-group>
 
@@ -39,7 +39,7 @@
                 <h4>Profile Details</h4>
                 <div fxLayout="column" fxLayout.gt-md="row">
                   <md-input-container fxFlex>
-                    <input md-input
+                    <input mdInput
                            name="firstname"
                            value="{{currentUser.firstname}}"
                            required
@@ -48,7 +48,7 @@
                 </div>
                 <div fxLayout="column" fxLayout.gt-md="row">
                   <md-input-container fxFlex>
-                    <input md-input
+                    <input mdInput
                            name="lastname"
                            value="{{currentUser.lastname}}"
                            required
@@ -57,7 +57,7 @@
                 </div>
                 <div fxLayout="column" fxLayout.gt-md="row">
                   <md-input-container fxFlex>
-                    <input md-input
+                    <input mdInput
                            name="email"
                            value="{{currentUser.email}}"
                            required
@@ -78,7 +78,7 @@
                 <h4>Account Password</h4>
 
                 <md-input-container fxFlex>
-                  <input md-input
+                  <input mdInput
                          name="oldpassword"
                          required
                          ngModel
@@ -86,7 +86,7 @@
                 </md-input-container>
 
                 <md-input-container fxFlex>
-                  <input md-input
+                  <input mdInput
                          name="password"
                          required
                          ngModel
@@ -94,7 +94,7 @@
                 </md-input-container>
 
                 <md-input-container fxFlex>
-                  <input md-input
+                  <input mdInput
                          name="confirmpassword"
                          required
                          ngModel

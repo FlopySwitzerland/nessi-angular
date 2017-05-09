@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Headers, Response, RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {AppSettings} from "../app.settings";
+import {AppSettings} from '../app.settings';
 import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class AuthenticationService {
           localStorage.setItem('user.lastname', user.data.lastname);
           localStorage.setItem('user.email', user.data.email);
           localStorage.setItem('token', user.data.token);
-          console.log(localStorage.getItem('token'))
+          console.log(localStorage.getItem('token'));
         }
       })
       .catch((err: Response) => {
@@ -49,7 +49,7 @@ export class AuthenticationService {
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
   }
 
   loggedIn() {

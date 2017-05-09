@@ -27,25 +27,11 @@
     <div class="activity-card md-elevation-z2">
       <div class="title-container" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column">
-          <span class="title">School Classes</span>
+          <span class="title">School Classes<p *ngIf="result">You chose: {{ result }}</p></span>
         </div>
         <span fxFlex></span>
-        <button md-icon-button (click)="modal1.show()">
+        <button md-icon-button (click)="addSchoolClass()">
           <md-icon>add_circle</md-icon>
-          <app-modal #modal1>
-            <div class="app-modal-header">
-              header
-            </div>
-            <div class="app-modal-body">
-              Whatever content you like, form fields, anything
-              <input type="text">
-            </div>
-            <div class="app-modal-footer">
-              <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
-              <button type="button" class="btn btn-default" (click)="modal2.show()">Show modal 2</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </app-modal>
         </button>
       </div>
       <div class="content">

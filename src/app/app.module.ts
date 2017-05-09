@@ -77,11 +77,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MarksComponent } from './pages/marks/marks.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { SubjectsComponent } from './pages/subjects/subjects.component';
+import {
+  AddAcademicYearDialogComponent, AddEstablishmentDialogComponent, AddSchoolClassDialogComponent,
+  SubjectsComponent
+} from './pages/subjects/subjects.component';
 import {SearchService} from './services/search.service';
 import { AddSchoolComponent } from './pages/schools/add-school/add-school.component';
-import {ModalComponent} from './core/modal/modal.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import {AuthModule} from './modules/auth.module';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -101,7 +104,6 @@ const sortablejsConfig: SortablejsOptions = {
     ButtonsComponent,
     FormElementsComponent,
     SearchComponent,
-    ModalComponent,
     BreadcrumbsComponent,
     ListsComponent,
     WidgetComponent,
@@ -115,6 +117,9 @@ const sortablejsConfig: SortablejsOptions = {
     CardsComponent,
     DialogsComponent,
     DemoDialog,
+    AddSchoolClassDialogComponent,
+    AddEstablishmentDialogComponent,
+    AddAcademicYearDialogComponent,
     IconsComponent,
     GridListComponent,
     MenuComponent,
@@ -154,6 +159,9 @@ const sortablejsConfig: SortablejsOptions = {
     LandingComponent
   ],
   entryComponents: [
+    AddSchoolClassDialogComponent,
+    AddEstablishmentDialogComponent,
+    AddAcademicYearDialogComponent,
     DemoDialog,
     InboxComposeComponent,
     CalendarEditComponent
@@ -176,6 +184,7 @@ const sortablejsConfig: SortablejsOptions = {
     HighlightModule,
     SortablejsModule,
     CalendarModule.forRoot(),
+    AuthModule
   ],
   providers: [
     SidenavService,

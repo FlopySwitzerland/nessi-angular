@@ -13,10 +13,15 @@ import {User} from "../../models/user";
 })
 export class SettingsComponent implements OnInit {
 
-  currentUser: User;
+  currentUser: any;
 
   constructor() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser')).data;
+    console.log(localStorage.getItem('user'));
+    this.currentUser = {
+      firstname: localStorage.getItem('user.firstname'),
+      lastname: localStorage.getItem('user.lastname'),
+      email: localStorage.getItem('user.lastname')
+  }
   }
 
   ngOnInit() {

@@ -1,19 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {SearchService} from '../../services/search.service';
+import * as _ from 'lodash';
+import { MdDialogRef, MdDialog } from '@angular/material';
+import {routeAnimation} from '../../route.animation';
+import {NgForm} from '@angular/forms';
+import {AuthConfig, AuthHttp} from 'angular2-jwt';
+import {AppSettings} from '../../app.settings';
+import {RequestOptions} from '@angular/http';
 
 @Component({
-  selector: 'ms-subjects',
+  selector: 'app-subjects',
   templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.scss']
+  styleUrls: ['./subjects.component.scss'],
+  animations: [ routeAnimation ]
 })
+
 export class SubjectsComponent implements OnInit {
 
   subjects;
   schoolclasses;
   academicyears;
+  AddAcademicYearRef: MdDialogRef<AddAcademicYearDialogComponent>;
+  AddEstablishmentRef: MdDialogRef<AddEstablishmentDialogComponent>;
+  AddSchoolClassRef: MdDialogRef<AddSchoolClassDialogComponent>;
+  result: string;
+
 
   constructor(
     private searchService: SearchService,
+    public dialog: MdDialog
   ) { }
 
   ngOnInit() {
@@ -89,8 +104,91 @@ export class SubjectsComponent implements OnInit {
   }
 
 
-  addSchoolClass(){
+  openDialog() {
+    this.AddSchoolClassRef = this.dialog.open(AddSchoolClassDialogComponent, {
+      disableClose: false
+    });
+
+    this.AddSchoolClassRef.afterClosed().subscribe(result => {
+      this.result = result;
+      this.AddSchoolClassRef = null;
+    });
+  }
+
+  addSchoolClass() {
+    this.AddSchoolClassRef = this.dialog.open(AddSchoolClassDialogComponent, {
+      disableClose: false
+    });
 
   }
+
+}
+
+
+/**
+ *  School Classes
+ *
+ */
+@Component({
+  selector: 'app-addschoolclass-dialog',
+  templateUrl: '../../components/addschoolclass.component.html'
+})
+export class AddSchoolClassDialogComponent {
+
+  foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
+  constructor(public dialogRef: MdDialogRef<AddSchoolClassDialogComponent>, public authHttp: AuthHttp) { }
+
+
+  save(form: NgForm) {
+    console.log(form.value);
+    this.authHttp.post(AppSettings.API_ENDPOINT + 'schoolclasses/add.json', localStorage.getItem('token'))
+      .subscribe(
+      data => console.log(data),
+      err => console.log(err),
+      () => console.log('Request Complete')
+    );
+  }
+}
+
+
+/**
+ *  Establishments
+ *
+ */
+@Component({
+  selector: 'app-addestablishment-dialog',
+  templateUrl: '../../components/addacademicyear.component.html'
+})
+export class AddEstablishmentDialogComponent {
+  constructor(public dialogRef: MdDialogRef<AddEstablishmentDialogComponent>) { }
+
+  save(form: NgForm) {
+
+  }
+
+}
+
+
+/**
+ *  Academic Years
+ *
+ */
+@Component({
+  selector: 'app-addacademicyear-dialog',
+  templateUrl: '../../components/addacademicyear.component.html',
+})
+export class AddAcademicYearDialogComponent {
+  foods = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+
+  constructor(public dialogRef: MdDialogRef<AddAcademicYearDialogComponent>) { }
 
 }
